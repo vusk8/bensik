@@ -7,51 +7,93 @@
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/styles.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
     <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
   </head>
   <body>
-    <main>
-      <!-- Header -->
-      <header class="header">
-        <div class="content">
-          <nav class="navbar">
-            <!-- Logo -->
-            <img src="./assets/img/logo.svg" alt="besnik" />
-            <!-- Navigation -->
-            <ul class="list">
-              <li><a href="#!">Home</a></li>
-              <li><a href="#!">Features</a></li>
-              <li><a href="#!">Services</a></li>
-              <li><a href="#!">Resources</a></li>
-              <li><a href="#!">Contact</a></li>
-            </ul>
-            <!-- Action -->
-            <div class="actions">
-              <a href="#!" class="action-link">Sign in</a>
-              <a href="#!" class="btn action-btn">Sign up</a>
-            </div>
-          </nav>
+    <!-- PC Header -->
+    <header class="fixed-header">
+      <div class="content">
+        <!-- Navbar -->
+        <nav class="navbar">
+          <!-- Tablet/mobile menu -->
+          <label for="menu-checkbox" class="toggle-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+              <path
+                fill="currentColor"
+                d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"
+              />
+            </svg>
+          </label>
 
-          <div class="hero">
-            <div class="info">
-              <p class="subtitle">Welcome to Besnik Agency</p>
-              <h1 class="title">Discover a place you'll love to live.</h1>
-              <p class="desc">
-                Get the best real estate deals first, before they hit the mass
-                market! HOT FORECLOSURE DEALS with one simple search.
-              </p>
-              <a href="" class="btn hero-cta">More About Us</a>
-            </div>
-
-            <img
-              src="./assets/img/hero.svg"
-              alt="Discover a place
-            you'll love to live."
-              class="hero-img"
-            />
+          <!-- Logo -->
+          <img class="logo" src="./assets/img/logo.svg" alt="besnik" />
+          <!-- Navigation -->
+          <ul id="pc-nav">
+            <li><a href="#!">Home</a></li>
+            <li><a href="#!">Features</a></li>
+            <li><a href="#!">Services</a></li>
+            <li><a href="#!">Resources</a></li>
+            <li><a href="#!">Contact</a></li>
+            <li class="show-on-mobile separate"><a href="#!">Sign in</a></li>
+            <li class="show-on-mobile"><a href="#!">Sign up</a></li>
+          </ul>
+          <!-- Action -->
+          <div class="actions">
+            <a href="#!" class="action-link">Sign in</a>
+            <a href="#!" class="btn action-btn">Sign up</a>
           </div>
+        </nav>
+      </div>
+    </header>
+    <!-- Tablet/mobile header -->
+    <header class="mobile-header">
+      <input
+        type="checkbox"
+        name=""
+        id="menu-checkbox"
+        class="menu-checkbox"
+        hidden
+      />
+      <!-- Overlay -->
+      <label for="menu-checkbox" class="menu-overlay"></label>
+      <!-- Menu content -->
+      <div class="menu-drawer">
+        <!-- Logo -->
+        <img src="./assets/img/logo.svg" alt="besnik" />
+
+        <!-- Navigation -->
+        <ul id="mobile-nav"></ul>
+        <script>
+          const pcNav = document.querySelector("#pc-nav");
+          const mobileNav = document.querySelector("#mobile-nav");
+
+          mobileNav.innerHTML = pcNav.innerHTML;
+        </script>
+      </div>
+    </header>
+    <main>
+      <!-- Hero -->
+      <div class="hero-wrap">
+        <div class="content">
+          <div class="info">
+            <p class="subtitle">Welcome to Besnik Agency</p>
+            <h1 class="title">Discover a place you'll love to live.</h1>
+            <p class="desc">
+              Get the best real estate deals first, before they hit the mass
+              market! HOT FORECLOSURE DEALS with one simple search.
+            </p>
+            <a href="" class="btn hero-cta">More About Us</a>
+          </div>
+
+          <img
+            src="./assets/img/hero.svg"
+            alt="Discover a place
+            you'll love to live."
+            class="hero-img"
+          />
         </div>
-      </header>
+      </div>
       <!-- Client -->
       <div class="clients">
         <div class="content">
@@ -73,11 +115,11 @@
             <p class="desc">5 Star Ratings (2k+ Review)</p>
           </div>
           <div class="row images">
-            <img src="./assets/img/client-1.svg" alt="1" />
-            <img src="./assets/img/client-2.svg" alt="2" />
-            <img src="./assets/img/client-3.svg" alt="3" />
-            <img src="./assets/img/client-4.svg" alt="4" />
-            <img src="./assets/img/client-5.svg" alt="5" />
+            <a><img src="./assets/img/client-1.svg" alt="1" /></a>
+            <a><img src="./assets/img/client-2.svg" alt="2" /></a>
+            <a><img src="./assets/img/client-3.svg" alt="3" /></a>
+            <a><img src="./assets/img/client-4.svg" alt="4" /></a>
+            <a><img src="./assets/img/client-5.svg" alt="5" /></a>
           </div>
         </div>
       </div>
@@ -132,7 +174,7 @@
           </div>
         </div>
       </div>
-      <!-- Feature 01-->
+      <!-- Feature-->
       <div class="featured">
         <div class="content">
           <header>
@@ -165,12 +207,7 @@
                 <h3 class="title">
                   <a href="#!" class="line-clamp">Nikko Apartments</a>
                 </h3>
-                <p class="desc line-clamp">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Accusantium similique totam, odio atque delectus molestiae
-                  iste earum dicta, corrupti, perferendis recusandae distinctio
-                  beatae modi maiores ad expedita accusamus quas consequuntur!
-                </p>
+                <p class="desc line-clamp">Lorem ipsum dolor sit amet.</p>
                 <div class="info">
                   <img
                     src="./assets/img/beds.svg"
@@ -255,121 +292,118 @@
           </div>
         </div>
       </div>
-      <!-- Feature 02-->
-      <div class="new-featured">
+      <!-- Stats-->
+      <div id="resources" class="stats">
         <div class="content">
-          <div class="new-featured__content">
-            <div class="new-featured__content--left">
-              <div class="card">
-                <div class="card__header">
-                  <h2 class="card__header--metric">40,000+</h2>
-                  <img src="./assets/img/arrow-up.svg" alt="arrow up" />
+          <div class="row">
+            <div class="img-block">
+              <img
+                class="image"
+                src="./assets/img/hero-house.jpg"
+                alt="You’ve found a neighborhood you love."
+              />
+              <div class="stats-trend">
+                <div class="row">
+                  <strong class="value">40,000+</strong>
+                  <img
+                    src="./assets/img/arrow-up.svg"
+                    alt="arrow up"
+                    class="icon"
+                  />
                 </div>
-                <p class="card__desc">
+                <p class="desc">
                   By avarage for 2 bedroom apments in San Francisco, CA
                 </p>
-                <div class="card__divider"></div>
-                <div class="list-user">
-                  <div class="list-user__first">
-                    <div class="avatars">
-                      <img
-                        class="avatar__item"
-                        src="./assets/img/user-01.jpg"
-                        alt="user avatar"
-                      />
-                      <img
-                        class="avatar__item"
-                        src="./assets/img/user-02.jpg"
-                        alt="user avatar"
-                      />
-                    </div>
-                    <div class="avatars">
-                      <img
-                        class="avatar__item"
-                        src="./assets/img/user-03.jpg"
-                        alt="user avatar"
-                      />
-                      <img
-                        class="avatar__item"
-                        src="./assets/img/user-04.jpg"
-                        alt="user avatar"
-                      />
-                      <img
-                        class="avatar__item"
-                        src="./assets/img/user-05.jpg"
-                        alt="user avatar"
-                      />
-                      <div class="avatar__item" style="background: #1f3bb1">
-                        R
-                      </div>
-                    </div>
-
-                    <div class="avatars">
-                      <div class="avatar__item" style="background: #24d6d9">
-                        FJ
-                      </div>
-                      <img
-                        class="avatar__item"
-                        src="./assets/img/user-06.jpg"
-                        alt="user avatar"
-                      />
-                      <div class="avatar__item" style="background: #f8c120">
-                        S
-                      </div>
-                    </div>
+                <div class="separate"></div>
+                <div class="avatar-block">
+                  <div class="avatar-group">
+                    <img
+                      class="avatar"
+                      src="./assets/img/user-01.jpg"
+                      alt="user avatar"
+                    />
+                    <img
+                      class="avatar"
+                      src="./assets/img/user-02.jpg"
+                      alt="user avatar"
+                    />
+                  </div>
+                  <div class="avatar-group">
+                    <img
+                      class="avatar"
+                      src="./assets/img/user-03.jpg"
+                      alt="user avatar"
+                    />
+                    <img
+                      class="avatar"
+                      src="./assets/img/user-04.jpg"
+                      alt="user avatar"
+                    />
+                    <img
+                      class="avatar"
+                      src="./assets/img/user-05.jpg"
+                      alt="user avatar"
+                    />
+                    <div class="avatar" style="background: #1f3bb1">R</div>
                   </div>
 
-                  <div class="list-user__second">
-                    <div class="avatars">
+                  <div class="avatar-group">
+                    <div class="avatar" style="background: #24d6d9">FJ</div>
+                    <img
+                      class="avatar"
+                      src="./assets/img/user-06.jpg"
+                      alt="user avatar"
+                    />
+                    <div class="avatar" style="background: #f8c120">S</div>
+                  </div>
+
+                  <div class="avatar-block">
+                    <div class="avatar-group">
                       <img
-                        class="avatar__item"
+                        class="avatar"
                         src="./assets/img/user-07.jpg"
                         alt="user avatar"
                       />
                       <img
-                        class="avatar__item"
+                        class="avatar"
                         src="./assets/img/user-08.jpg"
                         alt="user avatar"
                       />
                       <img
-                        class="avatar__item"
+                        class="avatar"
                         src="./assets/img/user-09.jpg"
                         alt="user avatar"
                       />
-                      <div class="avatar__item" style="background: #f97f6b">
-                        JJ
-                      </div>
+                      <div class="avatar" style="background: #f97f6b">JJ</div>
                     </div>
-                    <div class="avatars">
+                    <div class="avatar-group">
                       <img
-                        class="avatar__item"
+                        class="avatar"
                         src="./assets/img/user-10.jpg"
                         alt="user avatar"
                       />
-                      <div class="avatar__item" style="background: #73a242">
-                        QV
-                      </div>
+                      <div class="avatar" style="background: #73a242">QV</div>
                     </div>
-                    <div class="avatars">
+                    <div class="avatar-group">
                       <img
-                        class="avatar__item"
+                        class="avatar"
                         src="./assets/img/user-11.jpg"
                         alt="user avatar"
                       />
                       <img
-                        class="avatar__item"
+                        class="avatar"
                         src="./assets/img/user-12.jpg"
                         alt="user avatar"
                       />
                     </div>
-                    <div class="avatars">
+                    <div class="avatar-group">
                       <img
-                        class="avatar__item"
+                        class="avatar"
                         src="./assets/img/user-13.jpg"
                         alt="user avatar"
                       />
                       <img
-                        class="avatar__item"
+                        class="avatar"
                         src="./assets/img/user-14.jpg"
                         alt="user avatar"
                       />
@@ -377,13 +411,8 @@
                   </div>
                 </div>
               </div>
-              <img
-                class="new-featured__img"
-                src="./assets/img/hero-house.jpg"
-                alt="house"
-              />
             </div>
-            <div class="new-featured__content--right">
+            <div class="info">
               <h2 class="title">You’ve found a neighborhood you love.</h2>
               <p class="desc">
                 When you own a home, you’re committing to living in one location
@@ -392,18 +421,18 @@
               </p>
             </div>
           </div>
-          <div class="new-featured__metrics">
-            <div class="metric__item">
-              <h2 class="title">2,500</h2>
-              <p class="desc">Homes For Sale</p>
+          <div class="row row-qty">
+            <div class="qty-item">
+              <h2 class="qty">2,500</h2>
+              <p class="qty-desc">Homes For Sale</p>
             </div>
-            <div class="metric__item">
-              <h2 class="title">5,000+</h2>
-              <p class="desc">Homes Recently Sold</p>
+            <div class="qty-item">
+              <h2 class="qty">5,000+</h2>
+              <p class="qty-desc">Homes Recently Sold</p>
             </div>
-            <div class="metric__item">
-              <h2 class="title">170+</h2>
-              <p class="desc">Price Reduced</p>
+            <div class="qty-item">
+              <h2 class="qty">170+</h2>
+              <p class="qty-desc">Price Reduced</p>
             </div>
           </div>
         </div>
