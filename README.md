@@ -1,4 +1,4 @@
-# Project: Bensik Vert
+# Project: Bensik
 
 ## Table of Contents
 
